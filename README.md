@@ -13,7 +13,7 @@ This is my [Home Assistant](https://home-assistant.io/) configuration.
 
 
 * [Bose Soundtouch](https://www.bose.co.uk/en_gb/products/speakers/multi_room_speakers.html)
-  - Starts playing music in the morning (Confirurable with the input_datetime component)
+  - Starts playing music in the morning (Confirurable with the [input_datetime component](https://www.home-assistant.io/components/input_datetime/))
 
 * Media
   - [Plex](https://www.plex.tv/) for media consumption along with [Plex component](https://home-assistant.io/components/media_player.plex/)
@@ -52,3 +52,6 @@ If you spot things that were intended to be temporary and want to “undo” the
 Repeat until git status is clean. Then push your repo back to github:
 
 `git push origin master`
+
+### Useful links
+* [Show all active media players](https://community.home-assistant.io/t/show-any-currently-active-media-player-on-default-view/23960/2)
