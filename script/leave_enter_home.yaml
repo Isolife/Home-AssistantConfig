@@ -2,13 +2,13 @@
   #   sequence:
   #     - service:
 
-  # leave_home_morning:
-  #   sequence:
-  #     - service:
+  leave_home_morning:
+    sequence:
+      - service:         script.morning_music_off
 
   leave_home:
     sequence:
-      - service:      light.turn_off
+      - service:         light.turn_off
         data:
           entity_id:
             - light.vetle_rom
