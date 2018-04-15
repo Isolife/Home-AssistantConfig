@@ -1,16 +1,16 @@
 active_media_players:
   automation:
-  - alias:                   Media Update Active Group
+  - alias: Media Update Active Group
     trigger:
-    - entity_id:             sensor.media_players_active
-      platform:              state
+    - entity_id: sensor.media_players_active
+      platform: state
     action:
-    - service:               group.set
+    - service: group.set
       data_template:
-        object_id:           media_players_active
-        visible:             >
+        object_id: media_players_active
+        visible: >
           {{ trigger.to_state.state != '' }}
-        entities:            >
+        entities: >
           {% if trigger.to_state.state != '' %}
             {{ trigger.to_state.state }}
           {% else %}
@@ -18,11 +18,11 @@ active_media_players:
           {% endif %}
 
   sensor:
-  - platform:                template
+  - platform: template
     sensors:
       media_players_active:
-        friendly_name:       'Active Media Players'
-        value_template:      >
+        friendly_name: 'Active Media Players'
+        value_template: >
           {{ states.media_player
             | rejectattr('state', 'equalto', 'off')
             | rejectattr('state', 'equalto', 'idle')
