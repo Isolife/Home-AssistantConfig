@@ -4,7 +4,8 @@ This is my [Home Assistant](https://home-assistant.io/) configuration.
 
 ## Overview
 
-* [Git Push](#git)
+* [Git Push](#git_push)
+* [Latest build](https://travis-ci.org/Isolife/Home-AssistantConfig)
 
 ## Some of the devices and services that I use with Home Assistant
 * [Philips Hue](https://www.philips.no/c-m-li/hue)
@@ -17,8 +18,18 @@ This is my [Home Assistant](https://home-assistant.io/) configuration.
 * Media
   - [Plex](https://www.plex.tv/) for media consumption along with [Plex component](https://home-assistant.io/components/media_player.plex/)
 
-<a name="git"></a>
+<a name="git_push"></a>
 ## Git Push
+
+Activate the virtual environment
+
+`cd /home/pi/.homeassistant/ && source /home/pi/homeassistant/bin/activate`
+
+Check if configuration is working:
+
+`hass --script check_config`
+
+ok?
 
 `git status`
 
