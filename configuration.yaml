@@ -103,7 +103,7 @@ media_player:
   - platform:              spotify
     client_id:             !secret spotify_client_id
     client_secret:         !secret spotify_client_secret
-    
+
   - platform:              ps4
     host:                  192.168.1.89
     cmd:                   'sudo ps4-waker'
@@ -118,7 +118,7 @@ media_player:
 #                  System info                    #
 ###################################################
 
-sensor 2:
+sensor 2
     - platform:            systemmonitor
       resources:
         - type:            'processor_use'
@@ -127,6 +127,10 @@ sensor 2:
         - type:            'memory_use_percent'
         - type:            'memory_use'
         - type:            'memory_free'
+
+    - platform:            pi_hole
+
+    - platform:            plex
 
 
 
