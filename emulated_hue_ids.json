@@ -1,0 +1,18 @@
+{
+    "1": "media_player.soundtouch_kjkken",
+    "10": "light.hue_color_spot_2",
+    "11": "light.hue_color_spot_3",
+    "12": "light.vetle_rom",
+    "13": "group.all_lights",
+    "14": "light.hue_color_spot_1",
+    "15": "group.media_players_active",
+    "16": "media_player.endrerom",
+    "2": "group.all_scripts",
+    "3": "media_player.endrecast",
+    "4": "group.all_automations",
+    "5": "group.vacation_mode",
+    "6": "input_boolean.vacation_mode",
+    "7": "media_player.spotify",
+    "8": "group.morning_music",
+    "9": "input_boolean.alarm_clock_status"
+}

@@ -1,0 +1,24 @@
+light.hue_color_spot_2:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:b9:72:e7-0b
+light.hue_color_spot_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:5a:90:33-0b
+light.hue_bloom_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:30:1b:d3-0b
+light.hue_color_spot_3:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:5a:90:c2-0b
+media_player.audiovetle:
+  name:
+  platform: cast
+  unique_id: ca64fb64-8634-1303-b990-116012a8e175
+media_player.hdmivetle:
+  name:
+  platform: cast
+  unique_id: bc9e7b26-25f1-cfb7-e262-20e74ede0a07

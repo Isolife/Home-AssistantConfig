@@ -1,0 +1,14 @@
+/.cloud
+.HA_VERSION
+.ps4.conf
+.ps4-games.json
+.ps4-wake.credentials.json
+.spotify-token-cache
+.uuid
+add-current-game
+home-assistant.log
+home-assistant_v2.db
+phue.conf
+phue-001788a0b4b7.conf
+plex.conf
+secrets.yaml

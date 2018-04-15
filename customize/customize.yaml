@@ -1,0 +1,14 @@
+  # Groups
+  group.all_scripts:
+    hidden:                    false
+    order:                     1
+  group.all_automations:
+    hidden:                    false
+    order:                     2
+  group.all_lights:
+    hidden:                    false
+
+  # Alarm Clock
+  input_datetime.alarm_clock:
+    friendly_name:             Alarm Clock
+    

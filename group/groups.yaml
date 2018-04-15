@@ -1,0 +1,45 @@
+###################################################
+#                    Views                        #
+###################################################
+
+  default_view:
+    view:          yes
+    icon:          mdi:home
+    entities:
+      - group.all_lights
+      - input_datetime.alarm_clock
+      - media_player.playstation_4
+
+  info:
+    view:          yes
+    entities:
+      - group.raspberry_pi
+
+  debug:
+    view:          yes
+    name:          'Debug'
+    #icon:         mdi:account-multiple
+    entities:
+      - group.all_switches
+      - group.all_scripts
+      - group.all_automations
+      - group.mediaplayers
+
+
+###################################################
+#                    Groups                       #
+###################################################
+
+  all_lights:
+    name:          'Lights'
+    entities:
+      - light.vetle_rom
+      - light.vetle_rom_bloom
+
+  raspberry_pi:
+    name:          'Raspberry Pi'
+    entities:
+      - sensor.memory_use
+      - sensor.memory_free
+      - sensor.memory_use_percent
+      - sensor.since_last_boot

@@ -1,0 +1,148 @@
+homeassistant:
+  name:                    Home
+  latitude:                !secret lat
+  longitude:               !secret long
+  elevation:               153
+  unit_system:             metric
+  time_zone:               Europe/Oslo
+
+###################################################
+#                 Customization                   #
+###################################################
+
+  customize:               !include_dir_merge_named customize
+
+
+
+###################################################
+#                 Packages                        #
+###################################################
+
+  packages:                !include_dir_merge_named packages
+
+
+
+###################################################
+#                 Misc                            #
+###################################################
+
+# Configuration for the website
+http:
+  api_password:            !secret http_password
+
+# Checks for available updates
+updater:
+  include_used_components: true
+
+# Enables support for tracking state changes over time.
+history:
+  include:
+    entities:
+      - media_player.soundtouch_kjkken
+      - media_player.spotify
+      - light.vetle_rom
+
+# Track the sun
+sun:
+
+# Discover some devices automatically
+#discovery:
+
+# Allows you to issue voice commands from the frontend
+#conversation:
+
+# View all events in a logbook
+logbook:
+  exclude:
+    entities:
+      - sensor.time
+
+# Enable config screen
+config:
+
+# Enables the frontend
+frontend:
+  javascript_version:      latest
+
+# Enable map screen
+map:
+
+# Show links to resources in log and frontend
+#introduction:
+
+# The Home Assistant Cloud allows you to quickly integrate your local Home Assistant with various cloud services like Amazon Alexa
+cloud:
+
+###################################################
+#                      Hubs                       #
+###################################################
+
+hue:
+  bridges:
+    - host:                192.168.1.201
+
+
+
+###################################################
+#                    Devices                      #
+###################################################
+
+media_player:
+  - platform:              soundtouch
+    host:                  192.168.1.35
+    name:                  soundtouch_kjøkken
+  - platform:              cast
+    host:                  192.168.1.160
+    name:                  Cast Audio Vetle
+  - platform:              cast
+    host:                  192.168.1.233
+    name:                  Cast Video Vetle
+  - platform:              spotify
+    client_id:             !secret spotify_client_id
+    client_secret:         !secret spotify_client_secret
+  - platform:              ps4
+    host:                  192.168.1.89
+    cmd:                   'sudo ps4-waker'
+    filename:              '/home/pi/.homeassistant/.ps4-wake.credentials.json'
+    games_filename:        '/home/pi/.homeassistant/.ps4-games.json'
+    local_store:           '/home/pi/.homeassistant/games'
+
+
+
+
+###################################################
+#                  System info                    #
+###################################################
+
+sensor 2:
+    - platform:            systemmonitor
+      resources:
+        - type:            'processor_use'
+        - type:            'last_boot'
+        - type:            'since_last_boot'
+        - type:            'memory_use_percent'
+        - type:            'memory_use'
+        - type:            'memory_free'
+
+
+
+###################################################
+#                  Includes                       #
+###################################################
+
+sensor:                    !include sensor/sensor.yaml
+group:                     !include group/groups.yaml
+script:                    !include_dir_merge_named script
+input_datetime:            !include input/input_datetime.yaml
+# automation:              !include_dir_merge_list automation
+# command_line:            !include command_line/command_line.yaml
+
+# switch:
+#   - platform:            command_line
+#     switches:
+#       playstation4:
+#         command_on:      'sudo ps4-waker'
+#         command_off:     'sudo ps4-waker standby'
+#         command_state:   'nmap -p 9295 192.168.1.89 | grep -w -Eo "open"'
+#         value_template:  '{{ value == "open" }}'
+#         friendly_name:   "Playstation 4"

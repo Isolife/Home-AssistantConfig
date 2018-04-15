@@ -1,0 +1,15 @@
+  # enter_home:
+  #   sequence:
+  #     - service:
+
+  # leave_home_morning:
+  #   sequence:
+  #     - service:
+
+  leave_home:
+    sequence:
+      - service:      light.turn_off
+        data:
+          entity_id:
+            - light.vetle_rom
+            - light.hue_bloom_1
