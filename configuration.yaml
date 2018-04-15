@@ -91,15 +91,19 @@ media_player:
   - platform:              soundtouch
     host:                  192.168.1.35
     name:                  soundtouch_kjøkken
+
   - platform:              cast
     host:                  192.168.1.160
     name:                  Cast Audio Vetle
+
   - platform:              cast
     host:                  192.168.1.233
     name:                  Cast Video Vetle
+
   - platform:              spotify
     client_id:             !secret spotify_client_id
     client_secret:         !secret spotify_client_secret
+    
   - platform:              ps4
     host:                  192.168.1.89
     cmd:                   'sudo ps4-waker'
