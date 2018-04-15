@@ -9,11 +9,13 @@
       - group.all_lights
       - input_datetime.alarm_clock
       - media_player.playstation_4
+      - group.media_players_active
 
   info:
     view:          yes
     entities:
       - group.raspberry_pi
+      - group.pihole
 
   debug:
     view:          yes
@@ -23,7 +25,6 @@
       - group.all_switches
       - group.all_scripts
       - group.all_automations
-      - group.mediaplayers
 
 
 ###################################################
@@ -43,3 +44,9 @@
       - sensor.memory_free
       - sensor.memory_use_percent
       - sensor.since_last_boot
+
+  pihole:
+    name: 'Pi-Hole'
+    entities:
+      - sensor.pihole_ads_blocked_today
+      - sensor.pihole_ads_percentage_blocked_today
