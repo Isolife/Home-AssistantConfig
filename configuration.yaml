@@ -118,7 +118,7 @@ media_player:
 #                  System info                    #
 ###################################################
 
-sensor 2
+sensor 2:
     - platform:            systemmonitor
       resources:
         - type:            'processor_use'
@@ -130,7 +130,12 @@ sensor 2
 
     - platform:            pi_hole
 
-    - platform:            plex
+    # - platform:            plex
+    #   host:                192.168.1.131
+    #   port:                32400
+    #   username:            !secret plex_username
+    #   password:            !secret plex_password
+    #   token:               !secret plex_token
 
 
 
