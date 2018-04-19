@@ -7,7 +7,6 @@
     icon:          mdi:home
     entities:
       - group.all_lights
-      - input_datetime.alarm_clock
       - media_player.playstation_4
       - group.media_players_active
 
