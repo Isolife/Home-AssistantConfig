@@ -146,7 +146,7 @@ sensor 2:
 sensor:                    !include sensor/sensor.yaml
 group:                     !include group/groups.yaml
 script:                    !include_dir_merge_named script
-input_datetime:            !include input/input_datetime.yaml
+#input_datetime:            !include input/input_datetime.yaml
 # automation:              !include_dir_merge_list automation
 # command_line:            !include command_line/command_line.yaml
 
