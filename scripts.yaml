@@ -1,0 +1,57 @@
+leave_home:
+  alias: Leaving Home
+  sequence:
+  - service: light.turn_off
+    data:
+      entity_id:
+      - light.hue_bloom_1
+  - service: script.turn_on
+    data:
+      entity_id:
+      - script.leave_home_morning
+morning_music_on:
+  alias: Start Morning Music
+  sequence:
+  - service: media_player.turn_on
+    data:
+      entity_id: media_player.soundtouch_kjkken
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.soundtouch_kjkken
+      volume_level: 0.25
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.soundtouch_kjkken
+      media_content_id: 5
+      media_content_type: PLAYLIST
+  - delay:
+      minutes: 90
+  - service: script.morning_music_off
+morning_music_off:
+  alias: Stop Morning Music
+  sequence:
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.soundtouch_kjkken
+      volume_level: 0.25
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.soundtouch_kjkken
+      media_content_id: 4
+      media_content_type: PLAYLIST
+  - service: media_player.turn_off
+    data:
+      entity_id: media_player.soundtouch_kjkken
+  - service: script.turn_off
+    data:
+      entity_id: script.morning_music_on
+'leave_home_morning':
+  alias: Leaving Home in the Morning
+  sequence:
+  - after: 05:00:00
+    before: 08:00:00
+    condition: time
+  - data:
+      entity_id:
+      - light.vetle_rom
+    service: light.turn_off
