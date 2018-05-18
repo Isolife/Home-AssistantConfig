@@ -118,7 +118,7 @@ media_player:
 #                  System info                    #
 ###################################################
 
-sensor 2:
+sensor:
     - platform:            systemmonitor
       resources:
         - type:            'processor_use'
@@ -129,6 +129,10 @@ sensor 2:
         - type:            'memory_free'
 
     - platform:            pi_hole
+
+    - platform: time_date
+      display_options:
+        - 'time'
 
     # - platform:            plex
     #   host:                192.168.1.131
@@ -143,10 +147,10 @@ sensor 2:
 #                  Includes                       #
 ###################################################
 
-sensor:                    !include sensor/sensor.yaml
+# sensor:                    !include sensor/sensor.yaml
 group:                     !include group/groups.yaml
-script:                    !include_dir_merge_named script
-#input_datetime:            !include input/input_datetime.yaml
+script:                    !include scripts.yaml
+# input_datetime:            !include input/input_datetime.yaml
 # automation:              !include_dir_merge_list automation
 # command_line:            !include command_line/command_line.yaml
 
