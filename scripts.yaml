@@ -10,37 +10,39 @@ leave_home:
     data:
       entity_id:
       - script.leave_home_morning
-'leave_home_morning':
+leave_home_morning:
   alias: Leaving Home in the Morning
   sequence:
-  - after: 05:00:00
-    before: 07:00:00
+  - after: 04:00:00
+    before: 08:00:00
     condition: time
-  - service: script.turn_off
-    data:
+  - data:
       entity_id:
-        - script.morning_music_on
-  - service: script.turn_on
-    data:
+      - script.morning_music_on
+    service: script.turn_off
+  - data:
       entity_id:
-        - script.morning_music_off
+      - script.morning_music_off
+    service: script.turn_on
 morning_music_on:
   alias: Start Morning Music
   sequence:
-  - service: media_player.turn_on
-    data:
+  - after: 04:00:00
+    before: 08:00:00
+    condition: time
+  - data:
       entity_id: media_player.soundtouch_kjkken
-  - service: media_player.volume_set
-    data:
+    service: media_player.turn_on
+  - data:
       entity_id: media_player.soundtouch_kjkken
       volume_level: 0.25
-  - service: media_player.play_media
-    data:
+    service: media_player.volume_set
+  - data:
       entity_id: media_player.soundtouch_kjkken
       media_content_id: 5
       media_content_type: PLAYLIST
-  - delay:
-      minutes: 120
+    service: media_player.play_media
+  - delay: '[object Object]'
   - service: script.morning_music_off
 morning_music_off:
   alias: Stop Morning Music
@@ -57,3 +59,6 @@ morning_music_off:
   - service: media_player.turn_off
     data:
       entity_id: media_player.soundtouch_kjkken
+enter_home:
+  alias: Enter Home
+  sequence: []
