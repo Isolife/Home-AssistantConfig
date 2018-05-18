@@ -5,10 +5,25 @@ leave_home:
     data:
       entity_id:
       - light.hue_bloom_1
+      - light.vetle_rom
   - service: script.turn_on
     data:
       entity_id:
       - script.leave_home_morning
+'leave_home_morning':
+  alias: Leaving Home in the Morning
+  sequence:
+  - after: 05:00:00
+    before: 07:00:00
+    condition: time
+  - service: script.turn_off
+    data:
+      entity_id:
+        - script.morning_music_on
+  - service: script.turn_on
+    data:
+      entity_id:
+        - script.morning_music_off
 morning_music_on:
   alias: Start Morning Music
   sequence:
@@ -25,7 +40,7 @@ morning_music_on:
       media_content_id: 5
       media_content_type: PLAYLIST
   - delay:
-      minutes: 90
+      minutes: 120
   - service: script.morning_music_off
 morning_music_off:
   alias: Stop Morning Music
@@ -42,16 +57,3 @@ morning_music_off:
   - service: media_player.turn_off
     data:
       entity_id: media_player.soundtouch_kjkken
-  - service: script.turn_off
-    data:
-      entity_id: script.morning_music_on
-'leave_home_morning':
-  alias: Leaving Home in the Morning
-  sequence:
-  - after: 05:00:00
-    before: 08:00:00
-    condition: time
-  - data:
-      entity_id:
-      - light.vetle_rom
-    service: light.turn_off
