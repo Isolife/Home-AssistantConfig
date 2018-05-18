@@ -90,7 +90,7 @@ hue:
 media_player:
   - platform:              soundtouch
     host:                  192.168.1.35
-    name:                  soundtouch_kjøkken
+    name:                  soundtouch_kjkken
 
   - platform:              cast
     host:                  192.168.1.160
