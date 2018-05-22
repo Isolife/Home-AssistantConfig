@@ -79,7 +79,7 @@ cloud:
 
 hue:
   bridges:
-    - host:                192.168.1.201
+    - host:                192.168.1.240
 
 
 
@@ -89,15 +89,15 @@ hue:
 
 media_player:
   - platform:              soundtouch
-    host:                  192.168.1.35
+    host:                  192.168.1.221
     name:                  soundtouch_kjkken
 
   - platform:              cast
-    host:                  192.168.1.160
+    host:                  192.168.1.223
     name:                  Cast Audio Vetle
 
   - platform:              cast
-    host:                  192.168.1.233
+    host:                  192.168.1.222
     name:                  Cast Video Vetle
 
   - platform:              spotify
